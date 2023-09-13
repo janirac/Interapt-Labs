@@ -1,3 +1,4 @@
+import time
 # Write a Python function to find the maximum of three numbers 
 example_list = [8, 2, 3, -1, 7]
 
@@ -111,5 +112,107 @@ def find_even(list):
 
 # print(find_even([1, 2, 3, 4, 5, 6, 7, 8, 9]))
 
+
+def perfect_number(number):
+    list_of_factors = []
+    total_of_factors = 0
+    
+    for factor in range(1, number):
+        if number % factor == 0:
+            total_of_factors += factor
+            list_of_factors.append(factor)
+            
+    print("----------")
+    print(list_of_factors)
+    print(total_of_factors)
     
     
+    if total_of_factors == number: 
+        return True
+    else:
+        return False
+            
+    
+
+# print(perfect_number(6)) #True
+# print(perfect_number(2)) #False
+# print(perfect_number(28)) #True
+# print(perfect_number(13)) #False
+
+def palindrome(string):
+    reverse_string = string[::-1]
+    return reverse_string == string
+    
+# print(palindrome("madam"))
+# print(palindrome("no"))
+# print(palindrome("non"))
+# print(palindrome("nurses"))
+
+def pascals_triangle(n):
+    triangle = [1]
+    
+    for i in range(n):  # This is how many times I will do it 
+        print(triangle)  # This will print the current triangle
+        
+        temp = [1] #temp to keep track of triangle without modifying
+        
+        for num in range(1, len(triangle)): 
+            new_element = triangle[num - 1] + (triangle[num] if num < len(triangle) else 0)
+            temp.append(new_element)
+        
+        temp.append(1) 
+        triangle = temp  
+        
+pascals_triangle(4)
+
+def pangram(string):
+    alpha = "abcdefghijklmnopqrstuvwxyz"
+    
+    for char in alpha:
+        if char not in string:
+            return False
+        
+    return True
+
+# print(pangram("The quick brown fox jumps over the lazy dog"))
+# print(pangram("dog"))
+
+def hyphen_sorted_sentence(string):
+    return "-".join(sorted(string.split("-")))
+
+# print(hyphen_sorted_sentence("green-red-yellow-black-white"))
+
+def squared():
+    squared_numbers  = [num ** 2 for num in range(1, 21)]
+    return squared_numbers
+
+# print(squared())
+
+def python_code(string):
+    exec(string)
+
+# print(python_code('print("hello world")'))
+
+def outer_function():
+    def inner_function():
+        print("Im inside the inner function")
+        
+    return inner_function()
+
+# print(outer_function())
+
+def count_number_of_local_variables():
+    var1 = "var1"
+    var2 = "var1"
+    var3 = "var1"
+# print(count_number_of_local_variables.__code__.co_nlocals)
+
+def miliseconds(n):
+    print("starting")
+    time.sleep(n)
+    print("program now printing")
+    print(squared())
+
+# print(miliseconds(3))
+
+        
