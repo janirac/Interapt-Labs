@@ -52,4 +52,64 @@ def factorial(number):
         
 # print(factorial(4))
 
-def 
+def number_check(num):
+    if num in range(1, 10):
+        print(f"{num} is in the range 1 - 10")
+    else:
+        print(f"{num} is not in the range")
+        
+# print(number_check(5))
+
+
+def upper_and_lower_count(string):
+    upper = 0
+    lower = 0
+    for char in string:
+        if char != " ":
+            if char.isupper():
+                upper += 1
+            else:
+                lower += 1
+            
+    print(f"No. of Upper case characters: {upper}")
+    print(f"No. of Lower case characters: {lower}")
+    
+# print(upper_and_lower_count("The quick Brow Fox"))
+
+def distinct_list(list):
+    new_list = []
+    
+    for ele in list:
+        if ele not in new_list:
+            new_list.append(ele)
+            
+    print(new_list)
+    
+# print(distinct_list([1,2,3,3,3,3,4,5]))
+
+def prime(num):
+    if num < 2:
+        return False
+    
+    if num == 2:
+        return True
+    
+    for i in range(2, num):
+        if num % i == 0:
+            return False
+        
+    return True
+
+# print(prime(2))
+# print(prime(1))
+# print(prime(4))
+# print(prime(5))
+
+def find_even(list):
+    even_list = [num for num in list if num % 2 == 0]
+    return even_list
+
+# print(find_even([1, 2, 3, 4, 5, 6, 7, 8, 9]))
+
+    
+    
