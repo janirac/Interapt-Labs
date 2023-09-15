@@ -12,12 +12,19 @@
 # # for example
 string_to_replace = 'This is just a string with chars to be replaced'
 
-def replace_chars(string):
-    new_string = string.replace('a', " AA ")
-    new_string = new_string.replace('e', " EE ")
-    new_string = new_string.replace('i', " II ")
+# def replace_chars(string):
+#     new_string = string.replace('a', " AA ")
+#     new_string = new_string.replace('e', " EE ")
+#     new_string = new_string.replace('i', " II ")
     
-    return new_string
+#     return new_string
+
+def replace_chars(string):
+    string = string.replace('a', " AA ")
+    string = string.replace('e', " EE ")
+    string = string.replace('i', " II ")
+    
+    return string
             
             
 print(replace_chars(string_to_replace))
